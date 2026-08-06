@@ -1,0 +1,1335 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linet Beauty | One Stop Beauty & Medical Solution</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'soft-pink': '#F8E8EE',
+                        'nude-beige': '#F4E9E1',
+                        'ivory-white': '#FCFCFC',
+                        'champagne-gold': '#D8C3A5',
+                        'gold-dark': '#B89768',
+                        'rose-gold': '#E8C5B0',
+                        'rose-dark': '#C5A087',
+                        'charcoal': '#2C2623',
+                        'muted-text': '#6E655F',
+                        'light-gray': '#ECECEC',
+                    },
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'soft-luxury': '0 20px 40px -15px rgba(216, 195, 165, 0.25)',
+                        'glass': '0 8px 32px 0 rgba(197, 160, 135, 0.15)',
+                        'glow': '0 0 25px rgba(216, 195, 165, 0.4)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom CSS for Luxury Aesthetics & Glassmorphism -->
+    <style>
+        body {
+            background-color: #FCFCFC;
+            color: #2C2623;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, .font-serif-luxury {
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+        }
+
+        .glass-nav {
+            background: rgba(252, 252, 252, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(216, 195, 165, 0.2);
+        }
+
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #B89768 0%, #D8C3A5 50%, #A37F4E 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .gold-gradient-bg {
+            background: linear-gradient(135deg, #D8C3A5 0%, #C5A087 100%);
+        }
+
+        .gold-gradient-bg:hover {
+            background: linear-gradient(135deg, #C5A087 0%, #B89768 100%);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #F4E9E1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #D8C3A5;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #B89768;
+        }
+
+        .pulse-subtle {
+            animation: pulse-glow 3s infinite alternate;
+        }
+
+        @keyframes pulse-glow {
+            0% { box-shadow: 0 0 15px rgba(216, 195, 165, 0.3); }
+            100% { box-shadow: 0 0 30px rgba(216, 195, 165, 0.7); }
+        }
+
+        /* Smooth tab transitions */
+        .tab-content {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.4s ease-in-out;
+        }
+        .tab-content.active {
+            display: block;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="antialiased text-charcoal">
+
+    <!-- Top Bar Info -->
+    <div class="bg-nude-beige text-xs py-2 px-4 text-center text-muted-text border-b border-champagne-gold/20 flex justify-between items-center max-w-7xl mx-auto md:px-8">
+        <div class="hidden sm:flex items-center space-x-4">
+            <span><i class="inline-block mr-1">📍</i> Senopati, Jakarta Selatan &amp; Surabaya</span>
+            <span><i class="inline-block mr-1">⏰</i> Sen - Min: 09.00 - 20.00 WIB</span>
+        </div>
+        <div class="w-full sm:w-auto text-center sm:text-right font-medium text-charcoal">
+            ✨ Exclusive Member Discount Up To 25% For First Treatment
+        </div>
+    </div>
+
+    <!-- Navigation Header -->
+    <header class="sticky top-0 z-40 glass-nav transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="#" class="flex items-center space-x-3 group">
+                <div class="w-10 h-10 rounded-full gold-gradient-bg flex items-center justify-center text-white font-serif text-xl font-bold shadow-md group-hover:scale-105 transition-transform">
+                    L
+                </div>
+                <div>
+                    <span class="font-serif text-2xl font-bold tracking-widest uppercase text-charcoal block leading-none">LINET</span>
+                    <span class="text-[10px] tracking-[0.3em] uppercase gold-gradient-text font-semibold block mt-1">Beauty &amp; Medical</span>
+                </div>
+            </a>
+
+            <!-- Desktop Menu -->
+            <nav class="hidden lg:flex items-center space-x-8 text-sm font-medium">
+                <a href="#about" class="hover:text-gold-dark transition-colors py-2">Tentang Kami</a>
+                <a href="#business" class="hover:text-gold-dark transition-colors py-2">Lini Bisnis</a>
+                <a href="#why-us" class="hover:text-gold-dark transition-colors py-2">Keunggulan</a>
+                <a href="#flow" class="hover:text-gold-dark transition-colors py-2">Alur Layanan</a>
+                <a href="#gallery" class="hover:text-gold-dark transition-colors py-2">Galeri</a>
+                <a href="#articles" class="hover:text-gold-dark transition-colors py-2">Artikel</a>
+            </nav>
+
+            <!-- Header CTA -->
+            <div class="hidden sm:flex items-center space-x-4">
+                <a href="#consultation" class="gold-gradient-bg text-white px-5 py-2.5 rounded-full text-xs uppercase tracking-wider font-semibold shadow-soft-luxury hover:shadow-glow transition-all duration-300 hover:-translate-y-0.5">
+                    Reservasi Konsultasi
+                </a>
+            </div>
+
+            <!-- Mobile Hamburger Button -->
+            <button id="mobileMenuBtn" class="lg:hidden p-2 rounded-lg text-charcoal hover:bg-soft-pink focus:outline-none" aria-label="Toggle Menu">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path id="hamburgerIcon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Mobile Drawer -->
+        <div id="mobileMenu" class="hidden lg:hidden glass-card border-t border-champagne-gold/20 px-6 py-6 space-y-4 shadow-xl">
+            <a href="#about" class="block text-base font-medium hover:text-gold-dark mobile-link">Tentang Kami</a>
+            <a href="#business" class="block text-base font-medium hover:text-gold-dark mobile-link">Lini Bisnis</a>
+            <a href="#why-us" class="block text-base font-medium hover:text-gold-dark mobile-link">Keunggulan</a>
+            <a href="#flow" class="block text-base font-medium hover:text-gold-dark mobile-link">Alur Layanan</a>
+            <a href="#gallery" class="block text-base font-medium hover:text-gold-dark mobile-link">Galeri</a>
+            <a href="#articles" class="block text-base font-medium hover:text-gold-dark mobile-link">Artikel</a>
+            <a href="#consultation" class="block text-center gold-gradient-bg text-white py-3 rounded-full text-xs uppercase tracking-wider font-semibold shadow-md mobile-link">
+                Reservasi Konsultasi
+            </a>
+        </div>
+    </header>
+
+    <!-- 1. HERO SECTION -->
+    <section class="relative min-h-[calc(100vh-5rem)] flex items-center py-16 lg:py-24 overflow-hidden bg-gradient-to-b from-soft-pink/40 via-ivory-white to-ivory-white">
+        <!-- Background decorative ambient circles -->
+        <div class="absolute top-12 left-1/4 w-96 h-96 bg-champagne-gold/15 rounded-full filter blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-10 right-10 w-80 h-80 bg-rose-gold/20 rounded-full filter blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+                <!-- Left Text Content -->
+                <div class="lg:col-span-7 space-y-8 text-center lg:text-left">
+                    <div class="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full glass-card border border-champagne-gold/40 shadow-sm">
+                        <span class="w-2 h-2 rounded-full gold-gradient-bg animate-ping"></span>
+                        <span class="text-xs font-semibold tracking-widest uppercase gold-gradient-text">International Standard Aesthetics</span>
+                    </div>
+
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-serif font-bold text-charcoal leading-[1.15]">
+                        Reveal Your Natural Beauty with <span class="italic font-normal gold-gradient-text">Professional Care</span>
+                    </h1>
+
+                    <p class="text-base sm:text-lg text-muted-text max-w-2xl mx-auto lg:mx-0 font-light leading-relaxed">
+                        Beauty, Medical Expertise, and Premium Skincare in One Place. Solusi estetika terintegrasi yang menghadirkan perawatan tingkat medis berbasis teknologi modern dan sentuhan personal yang elegan.
+                    </p>
+
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                        <a href="#consultation" class="w-full sm:w-auto gold-gradient-bg text-white px-8 py-4 rounded-full text-sm font-semibold tracking-wider uppercase shadow-soft-luxury hover:shadow-glow hover:-translate-y-1 transition-all text-center">
+                            Konsultasi Sekarang
+                        </a>
+                        <a href="#business" class="w-full sm:w-auto bg-white/80 hover:bg-white text-charcoal border border-champagne-gold/60 px-8 py-4 rounded-full text-sm font-semibold tracking-wider uppercase shadow-sm hover:border-gold-dark hover:-translate-y-1 transition-all text-center">
+                            Daftar Treatment
+                        </a>
+                        <button onclick="scrollToProducts()" class="w-full sm:w-auto text-gold-dark hover:text-charcoal px-6 py-4 text-sm font-medium underline-offset-4 hover:underline transition-colors text-center">
+                            Belanja Skincare &rarr;
+                        </button>
+                    </div>
+
+                    <!-- Highlight Stats -->
+                    <div class="pt-8 border-t border-champagne-gold/20 grid grid-cols-3 gap-4 text-center lg:text-left">
+                        <div>
+                            <div class="font-serif text-3xl lg:text-4xl font-bold gold-gradient-text">15k+</div>
+                            <div class="text-xs text-muted-text uppercase tracking-wider mt-1">Satisfied Patients</div>
+                        </div>
+                        <div>
+                            <div class="font-serif text-3xl lg:text-4xl font-bold gold-gradient-text">100%</div>
+                            <div class="text-xs text-muted-text uppercase tracking-wider mt-1">Certified Doctors</div>
+                        </div>
+                        <div>
+                            <div class="font-serif text-3xl lg:text-4xl font-bold gold-gradient-text">4.9★</div>
+                            <div class="text-xs text-muted-text uppercase tracking-wider mt-1">Luxury Experience</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Hero Image Stack -->
+                <div class="lg:col-span-5 relative">
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
+                        <!-- Main Hero Photo Frame -->
+                        <div class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white/80 aspect-[4/5] bg-nude-beige">
+                            <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1000&q=80" 
+                                 alt="Linet Beauty Professional Care" 
+                                 class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
+                                 onerror="this.src='https://placehold.co/800x1000/F4E9E1/2C2623?text=Linet+Beauty+Care'">
+                            <div class="absolute inset-0 bg-gradient-to-t from-charcoal/40 via-transparent to-transparent"></div>
+                            
+                            <!-- Overlay Badge -->
+                            <div class="absolute bottom-6 left-6 right-6 glass-card p-4 rounded-2xl border border-white/60">
+                                <p class="text-xs uppercase tracking-widest text-gold-dark font-semibold">One Stop Medical Beauty</p>
+                                <p class="text-sm font-medium text-charcoal mt-1">Inovasi perawatan kulit dengan dokter spesialis estetik berpengalaman.</p>
+                            </div>
+                        </div>
+
+                        <!-- Floating Glass Mini Card -->
+                        <div class="absolute -top-6 -left-6 glass-card p-4 rounded-2xl shadow-soft-luxury border border-white hidden sm:flex items-center space-x-3">
+                            <div class="w-10 h-10 rounded-full bg-soft-pink flex items-center justify-center text-gold-dark">
+                                👑
+                            </div>
+                            <div>
+                                <div class="text-xs font-bold text-charcoal">VIP Treatment Room</div>
+                                <div class="text-[10px] text-muted-text">Privasi &amp; Kenyamanan Maksimal</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. TENTANG LINET BEAUTY -->
+    <section id="about" class="py-20 bg-ivory-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs uppercase tracking-[0.25em] gold-gradient-text font-bold block mb-2">Tentang Linet Beauty</span>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-charcoal">
+                    Integrasi Kedokteran, Teknologi, &amp; Estetika Berkelas
+                </h2>
+                <div class="w-16 h-0.5 gold-gradient-bg mx-auto mt-4"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Left Visual Showcase -->
+                <div class="grid grid-cols-2 gap-4 relative">
+                    <div class="space-y-4">
+                        <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=600&q=80" 
+                             alt="Klinik Linet Beauty Modern" 
+                             class="rounded-2xl shadow-lg object-cover h-64 w-full"
+                             onerror="this.src='https://placehold.co/600x800/F8E8EE/2C2623?text=Klinik+Modern'">
+                        <div class="glass-card p-5 rounded-2xl border border-champagne-gold/30 text-center">
+                            <span class="text-2xl">✨</span>
+                            <h4 class="font-serif font-bold text-lg mt-1 text-charcoal">Dermatology Standard</h4>
+                            <p class="text-xs text-muted-text mt-1">Peralatan bersertifikasi medis internasional.</p>
+                        </div>
+                    </div>
+                    <div class="space-y-4 pt-8">
+                        <div class="glass-card p-5 rounded-2xl border border-champagne-gold/30 text-center">
+                            <span class="text-2xl">🌿</span>
+                            <h4 class="font-serif font-bold text-lg mt-1 text-charcoal">Safe &amp; Natural</h4>
+                            <p class="text-xs text-muted-text mt-1">Formulasi teruji klinis dan aman jangka panjang.</p>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1512290900673-7002fffe9353?auto=format&fit=crop&w=600&q=80" 
+                             alt="Konsultasi Dokter Linet Beauty" 
+                             class="rounded-2xl shadow-lg object-cover h-64 w-full"
+                             onerror="this.src='https://placehold.co/600x800/F4E9E1/2C2623?text=Konsultasi+Dokter'">
+                    </div>
+                </div>
+
+                <!-- Right Content & Vision -->
+                <div class="space-y-6">
+                    <p class="text-base text-muted-text leading-relaxed">
+                        <strong class="text-charcoal font-semibold">Linet Beauty</strong> merupakan perusahaan unggulan yang menghadirkan solusi kecantikan menyeluruh (*One Stop Beauty &amp; Medical Solution*). Kami memadukan keahlian medis dermatologi, inovasi teknologi terkini, dan produk skincare berkualitas tinggi untuk memenuhi kebutuhan estetika setiap individu.
+                    </p>
+
+                    <!-- Vision Box -->
+                    <div class="p-6 rounded-2xl bg-gradient-to-r from-soft-pink/50 to-nude-beige/50 border border-champagne-gold/30">
+                        <div class="flex items-start space-x-4">
+                            <span class="text-3xl text-gold-dark">👁️</span>
+                            <div>
+                                <h3 class="font-serif text-2xl font-bold text-charcoal">Visi Kami</h3>
+                                <p class="text-sm text-muted-text mt-2 leading-relaxed">
+                                    "Menjadi perusahaan kecantikan terpercaya yang mengintegrasikan ilmu kedokteran, teknologi, dan estetika untuk meningkatkan kualitas hidup serta kepercayaan diri masyarakat."
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Company Values -->
+                    <div>
+                        <h4 class="text-xs font-bold uppercase tracking-widest gold-gradient-text mb-4">Nilai Utama Perusahaan (Core Values)</h4>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                            <div class="flex items-center space-x-3 p-3 rounded-xl bg-white border border-light-gray shadow-sm">
+                                <span class="w-8 h-8 rounded-full gold-gradient-bg text-white flex items-center justify-center text-xs font-bold">1</span>
+                                <div>
+                                    <h5 class="text-sm font-semibold text-charcoal">Professional</h5>
+                                    <p class="text-[11px] text-muted-text">Tim medis &amp; beautician bersertifikasi</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-3 p-3 rounded-xl bg-white border border-light-gray shadow-sm">
+                                <span class="w-8 h-8 rounded-full gold-gradient-bg text-white flex items-center justify-center text-xs font-bold">2</span>
+                                <div>
+                                    <h5 class="text-sm font-semibold text-charcoal">Trusted</h5>
+                                    <p class="text-[11px] text-muted-text">Produk BPOM &amp; FDA Approved</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-3 p-3 rounded-xl bg-white border border-light-gray shadow-sm">
+                                <span class="w-8 h-8 rounded-full gold-gradient-bg text-white flex items-center justify-center text-xs font-bold">3</span>
+                                <div>
+                                    <h5 class="text-sm font-semibold text-charcoal">Personalized</h5>
+                                    <p class="text-[11px] text-muted-text">Solusi tepat sesuai kondisi kulit</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-3 p-3 rounded-xl bg-white border border-light-gray shadow-sm">
+                                <span class="w-8 h-8 rounded-full gold-gradient-bg text-white flex items-center justify-center text-xs font-bold">4</span>
+                                <div>
+                                    <h5 class="text-sm font-semibold text-charcoal">Safe &amp; Innovative</h5>
+                                    <p class="text-[11px] text-muted-text">Teknologi laser &amp; medis modern</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. LINI BISNIS -->
+    <section id="business" class="py-20 bg-gradient-to-b from-nude-beige/30 via-ivory-white to-soft-pink/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs uppercase tracking-[0.25em] gold-gradient-text font-bold block mb-2">Lini Bisnis Utama</span>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-charcoal">
+                    Layanan &amp; Ekosistem Kecantikan Komprehensif
+                </h2>
+                <p class="text-sm text-muted-text mt-3">Empat pilar utama pelayanan Linet Beauty untuk memenuhi segala kebutuhan kesehatan dan kecantikan Anda.</p>
+            </div>
+
+            <!-- 4 Business Line Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Card 1: Beauty Consultant -->
+                <div class="glass-card rounded-2xl p-6 border border-champagne-gold/40 hover:border-gold-dark transition-all duration-300 hover:-translate-y-2 group shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl gold-gradient-bg flex items-center justify-center text-2xl text-white mb-6 group-hover:scale-110 transition-transform">
+                            💆‍♀️
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold text-charcoal mb-2">Beauty Consultant</h3>
+                        <p class="text-xs text-muted-text mb-4 leading-relaxed">Pendampingan penuh untuk analisa tipe kulit dan perencanaan regimen perawatan harian Anda.</p>
+                        <ul class="text-xs text-charcoal space-y-2 mb-6 border-t border-light-gray pt-4">
+                            <li class="flex items-center"><span class="text-gold-dark mr-2">✓</span> Konsultasi Kecantikan</li>
+                            <li class="flex items-center"><span class="text-gold-dark mr-2">✓</span> Analisis Kulit Digital</li>
+                            <li class="flex items-center"><span class="text-gold-dark mr-2">✓</span> Personalized Beauty Planning</li>
+                        </ul>
+                    </div>
+                    <a href="#consultation" class="block text-center text-xs font-bold uppercase tracking-wider text-gold-dark group-hover:text-charcoal transition-colors">
+                        Jadwalkan Konsultasi &rarr;
+                    </a>
+                </div>
+
+                <!-- Card 2: Medical Consultant -->
+                <div class="glass-card rounded-2xl p-6 border border-champagne-gold/40 hover:border-gold-dark transition-all duration-300 hover:-translate-y-2 group shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl gold-gradient-bg flex items-center justify-center text-2xl text-white mb-6 group-hover:scale-110 transition-transform">
+                            🩺
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold text-charcoal mb-2">Medical Consultant</h3>
+                        <p class="text-xs text-muted-text mb-4 leading-relaxed">Diagnosa dan penanganan langsung oleh Dokter Spesialis Kulit &amp; Estetik tersertifikasi.</p>
+                        <ul class="text-xs text-charcoal space-y-2 mb-6 border-t border-light-gray pt-4">
+                            <li class="flex items-center"><span class="text-gold-dark mr-2">✓</span> Konsultasi Dokter Estetik</li>
+                            <li class="flex items-center"><span class="text-gold-dark mr-2">✓</span> Edukasi Kesehatan Kulit</li>
+                            <li class="flex items-center"><span class="text-gold-dark mr-2">✓</span> Medical Skin Assessment</li>
+                        </ul>
+                    </div>
+                    <a href="#consultation" class="block text-center text-xs font-bold uppercase tracking-wider text-gold-dark group-hover:text-charcoal transition-colors">
+                        Temui Dokter &rarr;
+                    </a>
+                </div>
+
+                <!-- Card 3: Beauty Treatment -->
+                <div class="glass-card rounded-2xl p-6 border border-champagne-gold/40 hover:border-gold-dark transition-all duration-300 hover:-translate-y-2 group shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl gold-gradient-bg flex items-center justify-center text-2xl text-white mb-6 group-hover:scale-110 transition-transform">
+                            ✨
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold text-charcoal mb-2">Beauty Treatment</h3>
+                        <p class="text-xs text-muted-text mb-4 leading-relaxed">Rangkaian perawatan klinis tercanggih untuk mencerahkan, meremajakan, dan mengatasi masalah kulit.</p>
+                        <ul class="text-xs text-charcoal space-y-2 mb-6 border-t border-light-gray pt-4">
+                            <li class="flex items-center"><span class="text-gold-dark mr-2">✓</span> Deep Cleansing Facial</li>
+                            <li class="flex items-center"><span class="text-gold-dark mr-2">✓</span> Laser Skin Rejuvenation</li>
+                            <li class="flex items-center"><span class="text-gold-dark mr-2">✓</span> Acne &amp; Anti Aging Therapy</li>
+                        </ul>
+                    </div>
+                    <a href="#consultation" class="block text-center text-xs font-bold uppercase tracking-wider text-gold-dark group-hover:text-charcoal transition-colors">
+                        Pilih Perawatan &rarr;
+                    </a>
+                </div>
+
+                <!-- Card 4: Skincare Store -->
+                <div class="glass-card rounded-2xl p-6 border border-champagne-gold/40 hover:border-gold-dark transition-all duration-300 hover:-translate-y-2 group shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl gold-gradient-bg flex items-center justify-center text-2xl text-white mb-6 group-hover:scale-110 transition-transform">
+                            🧴
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold text-charcoal mb-2">Skincare Store</h3>
+                        <p class="text-xs text-muted-text mb-4 leading-relaxed">Produk skincare premium eksklusif teruji dermatologis dengan bahan aktif berkualitas tinggi.</p>
+                        <ul class="text-xs text-charcoal space-y-2 mb-6 border-t border-light-gray pt-4">
+                            <li class="flex items-center"><span class="text-gold-dark mr-2">✓</span> Cleanser &amp; Toner Fine</li>
+                            <li class="flex items-center"><span class="text-gold-dark mr-2">✓</span> High-Concentrate Serum</li>
+                            <li class="flex items-center"><span class="text-gold-dark mr-2">✓</span> Barrier Cream &amp; Sunscreen</li>
+                        </ul>
+                    </div>
+                    <button onclick="scrollToProducts()" class="block w-full text-center text-xs font-bold uppercase tracking-wider text-gold-dark group-hover:text-charcoal transition-colors">
+                        Lihat Produk &rarr;
+                    </button>
+                </div>
+            </div>
+
+            <!-- Interactive Premium Skincare Product Showcase Section -->
+            <div id="products-section" class="mt-20 glass-card rounded-3xl p-6 sm:p-10 border border-champagne-gold/30">
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-8 gap-4">
+                    <div>
+                        <span class="text-xs font-bold uppercase tracking-widest gold-gradient-text">Premium Collection</span>
+                        <h3 class="font-serif text-3xl font-bold text-charcoal mt-1">Linet Skincare Store</h3>
+                    </div>
+                    <div class="flex space-x-2 text-xs">
+                        <button onclick="filterProducts('all')" class="product-filter-btn active bg-gold-dark text-white px-4 py-2 rounded-full font-medium transition-all">Semua</button>
+                        <button onclick="filterProducts('serum')" class="product-filter-btn bg-white hover:bg-soft-pink text-charcoal border border-light-gray px-4 py-2 rounded-full font-medium transition-all">Serum</button>
+                        <button onclick="filterProducts('cream')" class="product-filter-btn bg-white hover:bg-soft-pink text-charcoal border border-light-gray px-4 py-2 rounded-full font-medium transition-all">Cream</button>
+                        <button onclick="filterProducts('sunscreen')" class="product-filter-btn bg-white hover:bg-soft-pink text-charcoal border border-light-gray px-4 py-2 rounded-full font-medium transition-all">Sunscreen</button>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Product Item 1 -->
+                    <div class="product-item serum bg-white rounded-2xl p-4 border border-light-gray hover:shadow-soft-luxury transition-all">
+                        <div class="aspect-square rounded-xl bg-nude-beige overflow-hidden relative mb-4">
+                            <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=500&q=80" 
+                                 alt="Linet Gold Rejuvenating Serum" 
+                                 class="w-full h-full object-cover hover:scale-105 transition-transform"
+                                 onerror="this.src='https://placehold.co/400x400/F4E9E1/2C2623?text=Gold+Serum'">
+                            <span class="absolute top-3 left-3 bg-gold-dark text-white text-[10px] uppercase font-bold px-2.5 py-1 rounded-full">Bestseller</span>
+                        </div>
+                        <h4 class="font-serif font-bold text-lg text-charcoal">Linet Gold Rejuvenating Serum</h4>
+                        <p class="text-xs text-muted-text mt-1">Serum anti-aging dengan Niacinamide 10% &amp; Gold Peptide.</p>
+                        <div class="flex justify-between items-center mt-4">
+                            <span class="font-serif font-bold text-lg text-gold-dark">Rp 485.000</span>
+                            <button onclick="openOrderModal('Linet Gold Rejuvenating Serum', '485.000')" class="gold-gradient-bg text-white px-3 py-1.5 rounded-lg text-xs font-semibold hover:shadow-md transition-all">Order</button>
+                        </div>
+                    </div>
+
+                    <!-- Product Item 2 -->
+                    <div class="product-item cream bg-white rounded-2xl p-4 border border-light-gray hover:shadow-soft-luxury transition-all">
+                        <div class="aspect-square rounded-xl bg-nude-beige overflow-hidden relative mb-4">
+                            <img src="https://images.unsplash.com/photo-1608248597260-8f9216065538?auto=format&fit=crop&w=500&q=80" 
+                                 alt="Linet Luxury Barrier Cream" 
+                                 class="w-full h-full object-cover hover:scale-105 transition-transform"
+                                 onerror="this.src='https://placehold.co/400x400/F8E8EE/2C2623?text=Barrier+Cream'">
+                        </div>
+                        <h4 class="font-serif font-bold text-lg text-charcoal">Linet Luxury Barrier Cream</h4>
+                        <p class="text-xs text-muted-text mt-1">Pelembap intensif penguat skin barrier dengan Ceramide Complex.</p>
+                        <div class="flex justify-between items-center mt-4">
+                            <span class="font-serif font-bold text-lg text-gold-dark">Rp 350.000</span>
+                            <button onclick="openOrderModal('Linet Luxury Barrier Cream', '350.000')" class="gold-gradient-bg text-white px-3 py-1.5 rounded-lg text-xs font-semibold hover:shadow-md transition-all">Order</button>
+                        </div>
+                    </div>
+
+                    <!-- Product Item 3 -->
+                    <div class="product-item sunscreen bg-white rounded-2xl p-4 border border-light-gray hover:shadow-soft-luxury transition-all">
+                        <div class="aspect-square rounded-xl bg-nude-beige overflow-hidden relative mb-4">
+                            <img src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?auto=format&fit=crop&w=500&q=80" 
+                                 alt="Linet UV Shield SPF 50+ PA++++" 
+                                 class="w-full h-full object-cover hover:scale-105 transition-transform"
+                                 onerror="this.src='https://placehold.co/400x400/ECECEC/2C2623?text=UV+Shield'">
+                        </div>
+                        <h4 class="font-serif font-bold text-lg text-charcoal">Linet UV Shield SPF 50+</h4>
+                        <p class="text-xs text-muted-text mt-1">Sunscreen hybrid ultra ringan tanpa whitecast &amp; efek glowing alami.</p>
+                        <div class="flex justify-between items-center mt-4">
+                            <span class="font-serif font-bold text-lg text-gold-dark">Rp 275.000</span>
+                            <button onclick="openOrderModal('Linet UV Shield SPF 50+', '275.000')" class="gold-gradient-bg text-white px-3 py-1.5 rounded-lg text-xs font-semibold hover:shadow-md transition-all">Order</button>
+                        </div>
+                    </div>
+
+                    <!-- Product Item 4 -->
+                    <div class="product-item serum bg-white rounded-2xl p-4 border border-light-gray hover:shadow-soft-luxury transition-all">
+                        <div class="aspect-square rounded-xl bg-nude-beige overflow-hidden relative mb-4">
+                            <img src="https://images.unsplash.com/photo-1617897903246-719242758050?auto=format&fit=crop&w=500&q=80" 
+                                 alt="Linet Radiant Brightening Essence" 
+                                 class="w-full h-full object-cover hover:scale-105 transition-transform"
+                                 onerror="this.src='https://placehold.co/400x400/F4E9E1/2C2623?text=Bright+Essence'">
+                        </div>
+                        <h4 class="font-serif font-bold text-lg text-charcoal">Radiant Brightening Essence</h4>
+                        <p class="text-xs text-muted-text mt-1">Formula mencerahkan flek hitam &amp; meratakan warna kulit.</p>
+                        <div class="flex justify-between items-center mt-4">
+                            <span class="font-serif font-bold text-lg text-gold-dark">Rp 410.000</span>
+                            <button onclick="openOrderModal('Radiant Brightening Essence', '410.000')" class="gold-gradient-bg text-white px-3 py-1.5 rounded-lg text-xs font-semibold hover:shadow-md transition-all">Order</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. MENGAPA MEMILIH LINET BEAUTY -->
+    <section id="why-us" class="py-20 bg-ivory-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs uppercase tracking-[0.25em] gold-gradient-text font-bold block mb-2">Excellence Standards</span>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-charcoal">
+                    Mengapa Memilih Linet Beauty?
+                </h2>
+                <div class="w-16 h-0.5 gold-gradient-bg mx-auto mt-4"></div>
+            </div>
+
+            <!-- 6 Key Advantages Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Advantage 1 -->
+                <div class="p-6 rounded-2xl bg-white border border-light-gray shadow-sm hover:shadow-soft-luxury transition-all duration-300 flex items-start space-x-4">
+                    <div class="w-12 h-12 rounded-xl bg-soft-pink flex items-center justify-center text-2xl flex-shrink-0">
+                        👨‍⚕️
+                    </div>
+                    <div>
+                        <h3 class="font-serif font-bold text-xl text-charcoal">Dokter &amp; Consultant Berpengalaman</h3>
+                        <p class="text-xs text-muted-text mt-2 leading-relaxed">Ditangani langsung oleh tim medis profesional yang rutin mengikuti simposium internasional.</p>
+                    </div>
+                </div>
+
+                <!-- Advantage 2 -->
+                <div class="p-6 rounded-2xl bg-white border border-light-gray shadow-sm hover:shadow-soft-luxury transition-all duration-300 flex items-start space-x-4">
+                    <div class="w-12 h-12 rounded-xl bg-nude-beige flex items-center justify-center text-2xl flex-shrink-0">
+                        💎
+                    </div>
+                    <div>
+                        <h3 class="font-serif font-bold text-xl text-charcoal">Produk Berkualitas Premium</h3>
+                        <p class="text-xs text-muted-text mt-2 leading-relaxed">Seluruh bahan aktif skincare menggunakan formulasi standar Eropa &amp; aman jangka panjang.</p>
+                    </div>
+                </div>
+
+                <!-- Advantage 3 -->
+                <div class="p-6 rounded-2xl bg-white border border-light-gray shadow-sm hover:shadow-soft-luxury transition-all duration-300 flex items-start space-x-4">
+                    <div class="w-12 h-12 rounded-xl bg-soft-pink flex items-center justify-center text-2xl flex-shrink-0">
+                        ⚡
+                    </div>
+                    <div>
+                        <h3 class="font-serif font-bold text-xl text-charcoal">Treatment Modern &amp; Canggih</h3>
+                        <p class="text-xs text-muted-text mt-2 leading-relaxed">Penggunaan laser Pico, RF Microneedling, dan alat medis mutakhir dengan minim downtime.</p>
+                    </div>
+                </div>
+
+                <!-- Advantage 4 -->
+                <div class="p-6 rounded-2xl bg-white border border-light-gray shadow-sm hover:shadow-soft-luxury transition-all duration-300 flex items-start space-x-4">
+                    <div class="w-12 h-12 rounded-xl bg-nude-beige flex items-center justify-center text-2xl flex-shrink-0">
+                        👑
+                    </div>
+                    <div>
+                        <h3 class="font-serif font-bold text-xl text-charcoal">Pelayanan Personal (Tailored)</h3>
+                        <p class="text-xs text-muted-text mt-2 leading-relaxed">Pendekatan individual karena setiap jenis kulit membutuhkan treatment plan yang berbeda.</p>
+                    </div>
+                </div>
+
+                <!-- Advantage 5 -->
+                <div class="p-6 rounded-2xl bg-white border border-light-gray shadow-sm hover:shadow-soft-luxury transition-all duration-300 flex items-start space-x-4">
+                    <div class="w-12 h-12 rounded-xl bg-soft-pink flex items-center justify-center text-2xl flex-shrink-0">
+                        🔬
+                    </div>
+                    <div>
+                        <h3 class="font-serif font-bold text-xl text-charcoal">Teknologi Terkini</h3>
+                        <p class="text-xs text-muted-text mt-2 leading-relaxed">Fasilitas klinik berkonsep ruang steril, nyaman, dan higienis berskala internasional.</p>
+                    </div>
+                </div>
+
+                <!-- Advantage 6 -->
+                <div class="p-6 rounded-2xl bg-white border border-light-gray shadow-sm hover:shadow-soft-luxury transition-all duration-300 flex items-start space-x-4">
+                    <div class="w-12 h-12 rounded-xl bg-nude-beige flex items-center justify-center text-2xl flex-shrink-0">
+                        📲
+                    </div>
+                    <div>
+                        <h3 class="font-serif font-bold text-xl text-charcoal">Konsultasi Mudah &amp; Cepat</h3>
+                        <p class="text-xs text-muted-text mt-2 leading-relaxed">Sistem reservasi online yang efisien tanpa perlu mengantre lama di klinik.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. ALUR PELAYANAN (TIMELINE MODERN) -->
+    <section id="flow" class="py-20 bg-gradient-to-b from-soft-pink/20 to-ivory-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs uppercase tracking-[0.25em] gold-gradient-text font-bold block mb-2">Step by Step Experience</span>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-charcoal">
+                    Alur Pelayanan Pasien Linet Beauty
+                </h2>
+                <p class="text-sm text-muted-text mt-2">6 langkah terstruktur untuk memastikan hasil perawatan Anda maksimal dan aman.</p>
+            </div>
+
+            <!-- Timeline Steps Container -->
+            <div class="relative">
+                <!-- Desktop Horizontal Line -->
+                <div class="hidden lg:block absolute top-1/2 left-0 w-full h-0.5 gold-gradient-bg -translate-y-1/2 z-0"></div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-6 relative z-10">
+                    <!-- Step 1 -->
+                    <div class="glass-card p-5 rounded-2xl border border-champagne-gold/30 hover:border-gold-dark transition-all text-center group">
+                        <div class="w-12 h-12 rounded-full gold-gradient-bg text-white font-serif font-bold text-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">1</div>
+                        <h3 class="font-serif font-bold text-lg text-charcoal">Registrasi</h3>
+                        <p class="text-xs text-muted-text mt-2">Pendaftaran online atau langsung di klinik dengan asisten kami.</p>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="glass-card p-5 rounded-2xl border border-champagne-gold/30 hover:border-gold-dark transition-all text-center group">
+                        <div class="w-12 h-12 rounded-full gold-gradient-bg text-white font-serif font-bold text-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">2</div>
+                        <h3 class="font-serif font-bold text-lg text-charcoal">Konsultasi</h3>
+                        <p class="text-xs text-muted-text mt-2">Diskusi keluhan kulit secara intim bersama Dokter Spesialis.</p>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="glass-card p-5 rounded-2xl border border-champagne-gold/30 hover:border-gold-dark transition-all text-center group">
+                        <div class="w-12 h-12 rounded-full gold-gradient-bg text-white font-serif font-bold text-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">3</div>
+                        <h3 class="font-serif font-bold text-lg text-charcoal">Analisis</h3>
+                        <p class="text-xs text-muted-text mt-2">Pemeriksaan mendalam menggunakan skin analyzer AI modern.</p>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="glass-card p-5 rounded-2xl border border-champagne-gold/30 hover:border-gold-dark transition-all text-center group">
+                        <div class="w-12 h-12 rounded-full gold-gradient-bg text-white font-serif font-bold text-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">4</div>
+                        <h3 class="font-serif font-bold text-lg text-charcoal">Treatment</h3>
+                        <p class="text-xs text-muted-text mt-2">Pelaksanaan tindakan medis di ruang VIP yang higienis.</p>
+                    </div>
+
+                    <!-- Step 5 -->
+                    <div class="glass-card p-5 rounded-2xl border border-champagne-gold/30 hover:border-gold-dark transition-all text-center group">
+                        <div class="w-12 h-12 rounded-full gold-gradient-bg text-white font-serif font-bold text-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">5</div>
+                        <h3 class="font-serif font-bold text-lg text-charcoal">Perawatan Lanjutan</h3>
+                        <p class="text-xs text-muted-text mt-2">Pemberian resep skincare rumahan yang disesuaikan.</p>
+                    </div>
+
+                    <!-- Step 6 -->
+                    <div class="glass-card p-5 rounded-2xl border border-champagne-gold/30 hover:border-gold-dark transition-all text-center group">
+                        <div class="w-12 h-12 rounded-full gold-gradient-bg text-white font-serif font-bold text-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">6</div>
+                        <h3 class="font-serif font-bold text-lg text-charcoal">Evaluasi Hasil</h3>
+                        <p class="text-xs text-muted-text mt-2">Follow-up berkala untuk memantau kemajuan kesehatan kulit Anda.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. TESTIMONI (SLIDER INTERAKTIF) -->
+    <section class="py-20 bg-ivory-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs uppercase tracking-[0.25em] gold-gradient-text font-bold block mb-2">Real Stories</span>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-charcoal">
+                    Apa Kata Pelanggan Setia Kami
+                </h2>
+                <div class="w-16 h-0.5 gold-gradient-bg mx-auto mt-4"></div>
+            </div>
+
+            <!-- Testimonial Slider Container -->
+            <div class="max-w-4xl mx-auto relative">
+                <div id="testimonialContainer" class="glass-card p-8 sm:p-12 rounded-3xl border border-champagne-gold/40 shadow-soft-luxury text-center relative overflow-hidden">
+                    <span class="text-6xl font-serif text-champagne-gold/40 absolute top-4 left-6 select-none">“</span>
+                    
+                    <div id="testimonialCard" class="transition-opacity duration-500 opacity-100">
+                        <div class="w-20 h-20 rounded-full border-2 border-champagne-gold p-1 mx-auto mb-4 overflow-hidden">
+                            <img id="testiImg" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80" 
+                                 alt="Testimonial Patient" 
+                                 class="w-full h-full object-cover rounded-full"
+                                 onerror="this.src='https://placehold.co/200x200/F8E8EE/2C2623?text=User'">
+                        </div>
+                        <div class="text-gold-dark text-lg mb-3">★★★★★</div>
+                        <p id="testiQuote" class="text-base sm:text-lg italic text-charcoal max-w-2xl mx-auto leading-relaxed">
+                            "Sudah 1 tahun mempercayakan kesehatan kulit muka saya di Linet Beauty. Treatment Pico Laser dan skincare serumnya membuat flek memudar total dan kulit terasa jauh lebih mulus glowing natural."
+                        </p>
+                        <h4 id="testiName" class="font-serif font-bold text-xl text-charcoal mt-6">Clarissa Devina</h4>
+                        <p id="testiRole" class="text-xs text-muted-text uppercase tracking-widest mt-0.5">Entrepreneur, Jakarta</p>
+                    </div>
+                </div>
+
+                <!-- Slider Controls -->
+                <div class="flex justify-center items-center space-x-4 mt-8">
+                    <button onclick="prevTestimonial()" class="w-10 h-10 rounded-full bg-white border border-champagne-gold flex items-center justify-center text-charcoal hover:bg-soft-pink transition-colors">
+                        &larr;
+                    </button>
+                    <div id="testimonialDots" class="flex space-x-2">
+                        <!-- Dots populated via JS -->
+                    </div>
+                    <button onclick="nextTestimonial()" class="w-10 h-10 rounded-full bg-white border border-champagne-gold flex items-center justify-center text-charcoal hover:bg-soft-pink transition-colors">
+                        &rarr;
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. GALERI (MODERN GRID FILTERABLE) -->
+    <section id="gallery" class="py-20 bg-gradient-to-b from-ivory-white via-nude-beige/20 to-ivory-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-xs uppercase tracking-[0.25em] gold-gradient-text font-bold block mb-2">Visual Experience</span>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-charcoal">
+                    Galeri Clinic &amp; Treatment
+                </h2>
+                <p class="text-sm text-muted-text mt-2">Intip keindahan fasilitas klinik dan suasana perawatan Linet Beauty.</p>
+            </div>
+
+            <!-- Gallery Filter Buttons -->
+            <div class="flex flex-wrap justify-center gap-2 mb-10">
+                <button onclick="filterGallery('all')" class="gallery-btn active bg-gold-dark text-white px-5 py-2 rounded-full text-xs font-semibold uppercase tracking-wider transition-all">Semua</button>
+                <button onclick="filterGallery('klinik')" class="gallery-btn bg-white hover:bg-soft-pink border border-light-gray px-5 py-2 rounded-full text-xs font-semibold uppercase tracking-wider transition-all">Klinik</button>
+                <button onclick="filterGallery('treatment')" class="gallery-btn bg-white hover:bg-soft-pink border border-light-gray px-5 py-2 rounded-full text-xs font-semibold uppercase tracking-wider transition-all">Treatment</button>
+                <button onclick="filterGallery('produk')" class="gallery-btn bg-white hover:bg-soft-pink border border-light-gray px-5 py-2 rounded-full text-xs font-semibold uppercase tracking-wider transition-all">Produk</button>
+                <button onclick="filterGallery('ruangtunggu')" class="gallery-btn bg-white hover:bg-soft-pink border border-light-gray px-5 py-2 rounded-full text-xs font-semibold uppercase tracking-wider transition-all">Ruang Tunggu</button>
+            </div>
+
+            <!-- Gallery Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Gallery Item 1 -->
+                <div class="gallery-item klinik group relative rounded-2xl overflow-hidden shadow-md aspect-[4/3] cursor-pointer" onclick="openImageModal(this)">
+                    <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=800&q=80" 
+                         alt="Interior Klinik Modern" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                         onerror="this.src='https://placehold.co/800x600/F4E9E1/2C2623?text=Fasilitas+Klinik'">
+                    <div class="absolute inset-0 bg-gradient-to-t from-charcoal/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                        <div>
+                            <span class="text-[10px] uppercase font-bold text-champagne-gold">Fasilitas Klinik</span>
+                            <h4 class="font-serif font-bold text-white text-lg">Ruang Konsultasi Utama</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 2 -->
+                <div class="gallery-item treatment group relative rounded-2xl overflow-hidden shadow-md aspect-[4/3] cursor-pointer" onclick="openImageModal(this)">
+                    <img src="https://images.unsplash.com/photo-1512290900673-7002fffe9353?auto=format&fit=crop&w=800&q=80" 
+                         alt="Facial Treatment" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                         onerror="this.src='https://placehold.co/800x600/F8E8EE/2C2623?text=Facial+Treatment'">
+                    <div class="absolute inset-0 bg-gradient-to-t from-charcoal/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                        <div>
+                            <span class="text-[10px] uppercase font-bold text-champagne-gold">Treatment</span>
+                            <h4 class="font-serif font-bold text-white text-lg">Deep Hydration Facial</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 3 -->
+                <div class="gallery-item produk group relative rounded-2xl overflow-hidden shadow-md aspect-[4/3] cursor-pointer" onclick="openImageModal(this)">
+                    <img src="https://images.unsplash.com/photo-1608248597260-8f9216065538?auto=format&fit=crop&w=800&q=80" 
+                         alt="Display Skincare Premium" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                         onerror="this.src='https://placehold.co/800x600/ECECEC/2C2623?text=Produk+Skincare'">
+                    <div class="absolute inset-0 bg-gradient-to-t from-charcoal/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                        <div>
+                            <span class="text-[10px] uppercase font-bold text-champagne-gold">Produk</span>
+                            <h4 class="font-serif font-bold text-white text-lg">Etalase Skincare Premium</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 4 -->
+                <div class="gallery-item ruangtunggu group relative rounded-2xl overflow-hidden shadow-md aspect-[4/3] cursor-pointer" onclick="openImageModal(this)">
+                    <img src="https://images.unsplash.com/photo-1586105251261-72a756497a11?auto=format&fit=crop&w=800&q=80" 
+                         alt="Lounge Ruang Tunggu VIP" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                         onerror="this.src='https://placehold.co/800x600/F4E9E1/2C2623?text=VIP+Lounge'">
+                    <div class="absolute inset-0 bg-gradient-to-t from-charcoal/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                        <div>
+                            <span class="text-[10px] uppercase font-bold text-champagne-gold">Ruang Tunggu</span>
+                            <h4 class="font-serif font-bold text-white text-lg">VIP Reception &amp; Lounge</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 5 -->
+                <div class="gallery-item treatment group relative rounded-2xl overflow-hidden shadow-md aspect-[4/3] cursor-pointer" onclick="openImageModal(this)">
+                    <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=800&q=80" 
+                         alt="Skin Rejuvenation Treatment" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                         onerror="this.src='https://placehold.co/800x600/F8E8EE/2C2623?text=Rejuvenation'">
+                    <div class="absolute inset-0 bg-gradient-to-t from-charcoal/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                        <div>
+                            <span class="text-[10px] uppercase font-bold text-champagne-gold">Treatment</span>
+                            <h4 class="font-serif font-bold text-white text-lg">Laser Rejuvenation Room</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 6 -->
+                <div class="gallery-item klinik group relative rounded-2xl overflow-hidden shadow-md aspect-[4/3] cursor-pointer" onclick="openImageModal(this)">
+                    <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=800&q=80" 
+                         alt="Klinik Steril Medis" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                         onerror="this.src='https://placehold.co/800x600/ECECEC/2C2623?text=Ruang+Steril'">
+                    <div class="absolute inset-0 bg-gradient-to-t from-charcoal/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                        <div>
+                            <span class="text-[10px] uppercase font-bold text-champagne-gold">Fasilitas Klinik</span>
+                            <h4 class="font-serif font-bold text-white text-lg">Ruang Tindakan Medis</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. ARTIKEL TERBARU -->
+    <section id="articles" class="py-20 bg-ivory-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-12">
+                <div>
+                    <span class="text-xs uppercase tracking-[0.25em] gold-gradient-text font-bold block mb-2">Beauty Knowledge</span>
+                    <h2 class="text-3xl sm:text-4xl font-serif font-bold text-charcoal">Artikel &amp; Edukasi Terkini</h2>
+                </div>
+                <button onclick="alert('Menampilkan arsip seluruh artikel Linet Beauty.')" class="mt-4 sm:mt-0 text-xs uppercase tracking-wider font-bold gold-gradient-text hover:underline">
+                    Lihat Semua Artikel &rarr;
+                </button>
+            </div>
+
+            <!-- 3 Article Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Article 1 -->
+                <article class="bg-white rounded-2xl overflow-hidden border border-light-gray shadow-sm hover:shadow-soft-luxury transition-all group">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=600&q=80" 
+                             alt="Tips Perawatan Kulit Glowing" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                             onerror="this.src='https://placehold.co/600x400/F4E9E1/2C2623?text=Skin+Care+Tips'">
+                        <span class="absolute top-3 left-3 bg-white/90 backdrop-blur-md text-gold-dark text-[10px] font-bold uppercase px-3 py-1 rounded-full">Tips Perawatan</span>
+                    </div>
+                    <div class="p-6">
+                        <div class="text-[11px] text-muted-text mb-2">04 Agustus 2026 • Oleh Dr. Sarah Sp.DVE</div>
+                        <h3 class="font-serif font-bold text-xl text-charcoal group-hover:text-gold-dark transition-colors line-clamp-2">
+                            5 Langkah Menjaga Skin Barrier Tetap Sehat &amp; Glowing Alami
+                        </h3>
+                        <p class="text-xs text-muted-text mt-2 line-clamp-3 leading-relaxed">
+                            Skin barrier merupakan benteng utama perlindungan kulit dari polusi dan radikal bebas. Ketahui cara merawatnya agar terhindar dari iritasi dan penuan dini.
+                        </p>
+                        <button onclick="readArticle('5 Langkah Menjaga Skin Barrier', 'Skin barrier merupakan benteng utama perlindungan kulit dari polusi dan radikal bebas. Ketahui cara merawatnya dengan pemakaian moisturizer ceramide, sunscreen secara konsisten, serta tidak over-exfoliate. Konsultasikan ke dokter jika mengalami kemerahan persisten.')" class="mt-4 text-xs font-bold text-gold-dark hover:text-charcoal uppercase tracking-wider block">
+                            Baca Selengkapnya &rarr;
+                        </button>
+                    </div>
+                </article>
+
+                <!-- Article 2 -->
+                <article class="bg-white rounded-2xl overflow-hidden border border-light-gray shadow-sm hover:shadow-soft-luxury transition-all group">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1512290900673-7002fffe9353?auto=format&fit=crop&w=600&q=80" 
+                             alt="Edukasi Skincare Medis" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                             onerror="this.src='https://placehold.co/600x400/F8E8EE/2C2623?text=Edukasi+Skincare'">
+                        <span class="absolute top-3 left-3 bg-white/90 backdrop-blur-md text-gold-dark text-[10px] font-bold uppercase px-3 py-1 rounded-full">Edukasi Skincare</span>
+                    </div>
+                    <div class="p-6">
+                        <div class="text-[11px] text-muted-text mb-2">28 Juli 2026 • Oleh Tim Medis Linet</div>
+                        <h3 class="font-serif font-bold text-xl text-charcoal group-hover:text-gold-dark transition-colors line-clamp-2">
+                            Perbedaan Treatment Laser Pico vs Chemical Peeling untuk Flek
+                        </h3>
+                        <p class="text-xs text-muted-text mt-2 line-clamp-3 leading-relaxed">
+                            Bingung memilih perawatan yang tepat untuk hiperpigmentasi? Simak panduan lengkap efektivitas masing-masing teknologi medis ini.
+                        </p>
+                        <button onclick="readArticle('Perbedaan Laser Pico vs Chemical Peeling', 'Laser Pico bekerja menembakkan energi gelombang ultra-pendek untuk menghancurkan pigmen melasma menjadi partikel mikroskopis, sedangkan Chemical Peeling mengikis sel kulit mati permukaan. Kombinasi keduanya sesuai anjuran dokter memberikan hasil maksimal.')" class="mt-4 text-xs font-bold text-gold-dark hover:text-charcoal uppercase tracking-wider block">
+                            Baca Selengkapnya &rarr;
+                        </button>
+                    </div>
+                </article>
+
+                <!-- Article 3 -->
+                <article class="bg-white rounded-2xl overflow-hidden border border-light-gray shadow-sm hover:shadow-soft-luxury transition-all group">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=600&q=80" 
+                             alt="Beauty Trends 2026" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                             onerror="this.src='https://placehold.co/600x400/ECECEC/2C2623?text=Beauty+Trends'">
+                        <span class="absolute top-3 left-3 bg-white/90 backdrop-blur-md text-gold-dark text-[10px] font-bold uppercase px-3 py-1 rounded-full">Beauty Trends</span>
+                    </div>
+                    <div class="p-6">
+                        <div class="text-[11px] text-muted-text mb-2">15 Juli 2026 • Oleh Linet Editorial</div>
+                        <h3 class="font-serif font-bold text-xl text-charcoal group-hover:text-gold-dark transition-colors line-clamp-2">
+                            Tren Perawatan Pre-Aging untuk Usia 20-an &amp; 30-an
+                        </h3>
+                        <p class="text-xs text-muted-text mt-2 line-clamp-3 leading-relaxed">
+                            Mencegah penuan dini jauh lebih mudah daripada memperbaikinya. Pelajari perawatan preventif favorit para dokter estetik global.
+                        </p>
+                        <button onclick="readArticle('Tren Perawatan Pre-Aging', 'Perawatan pre-aging fokus pada rangsangan kolagen secara dini lewat micro-booster, peptide serum, dan penggunaan pembersih lembut. Memulai perawatan pencegahan sejak usia 20-an menjaga elastisitas kulit hingga jangka panjang.')" class="mt-4 text-xs font-bold text-gold-dark hover:text-charcoal uppercase tracking-wider block">
+                            Baca Selengkapnya &rarr;
+                        </button>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. FORM PENDAFTARAN KONSULTASI -->
+    <section id="consultation" class="py-20 bg-gradient-to-b from-nude-beige/40 via-soft-pink/30 to-ivory-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="glass-card rounded-3xl p-8 sm:p-12 border border-champagne-gold/50 shadow-soft-luxury relative">
+                <div class="text-center max-w-xl mx-auto mb-10">
+                    <span class="text-xs uppercase tracking-[0.25em] gold-gradient-text font-bold block mb-2">Exclusive Booking</span>
+                    <h2 class="text-3xl sm:text-4xl font-serif font-bold text-charcoal">Daftar Konsultasi Linet Beauty</h2>
+                    <p class="text-xs text-muted-text mt-2">Isi formulir di bawah ini untuk mengamankan slot konsultasi Anda bersama Dokter dan Beauty Consultant kami.</p>
+                </div>
+
+                <form id="consultationForm" onsubmit="handleConsultationSubmit(event)" class="space-y-6">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <!-- Nama Lengkap -->
+                        <div>
+                            <label class="block text-xs font-semibold uppercase tracking-wider text-charcoal mb-2">Nama Lengkap *</label>
+                            <input type="text" required placeholder="Contoh: Amanda Putri" class="w-full px-4 py-3 rounded-xl border border-light-gray focus:border-gold-dark focus:ring-1 focus:ring-gold-dark outline-none transition-all text-sm bg-white/80">
+                        </div>
+
+                        <!-- Nomor WhatsApp -->
+                        <div>
+                            <label class="block text-xs font-semibold uppercase tracking-wider text-charcoal mb-2">Nomor WhatsApp *</label>
+                            <input type="tel" required placeholder="Contoh: 081234567890" class="w-full px-4 py-3 rounded-xl border border-light-gray focus:border-gold-dark focus:ring-1 focus:ring-gold-dark outline-none transition-all text-sm bg-white/80">
+                        </div>
+
+                        <!-- Email -->
+                        <div>
+                            <label class="block text-xs font-semibold uppercase tracking-wider text-charcoal mb-2">Email *</label>
+                            <input type="email" required placeholder="Contoh: amanda@example.com" class="w-full px-4 py-3 rounded-xl border border-light-gray focus:border-gold-dark focus:ring-1 focus:ring-gold-dark outline-none transition-all text-sm bg-white/80">
+                        </div>
+
+                        <!-- Jenis Kelamin & Umur Grid -->
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-semibold uppercase tracking-wider text-charcoal mb-2">Jenis Kelamin</label>
+                                <select class="w-full px-3 py-3 rounded-xl border border-light-gray focus:border-gold-dark focus:ring-1 focus:ring-gold-dark outline-none transition-all text-sm bg-white/80">
+                                    <option>Wanita</option>
+                                    <option>Pria</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold uppercase tracking-wider text-charcoal mb-2">Umur *</label>
+                                <input type="number" required placeholder="Tahun" min="15" max="90" class="w-full px-3 py-3 rounded-xl border border-light-gray focus:border-gold-dark focus:ring-1 focus:ring-gold-dark outline-none transition-all text-sm bg-white/80">
+                            </div>
+                        </div>
+
+                        <!-- Pilih Layanan -->
+                        <div>
+                            <label class="block text-xs font-semibold uppercase tracking-wider text-charcoal mb-2">Pilih Layanan *</label>
+                            <select required class="w-full px-4 py-3 rounded-xl border border-light-gray focus:border-gold-dark focus:ring-1 focus:ring-gold-dark outline-none transition-all text-sm bg-white/80">
+                                <option value="">-- Pilih Jenis Layanan --</option>
+                                <option>Beauty Consultant (Analisis Kulit)</option>
+                                <option>Medical Consultant (Dokter Spesialis)</option>
+                                <option>Beauty Treatment (Facial / Laser / Rejuvenation)</option>
+                                <option>Pembelian Skincare Store</option>
+                            </select>
+                        </div>
+
+                        <!-- Jadwal yang Diinginkan -->
+                        <div>
+                            <label class="block text-xs font-semibold uppercase tracking-wider text-charcoal mb-2">Jadwal yang Diinginkan *</label>
+                            <input type="date" required class="w-full px-4 py-3 rounded-xl border border-light-gray focus:border-gold-dark focus:ring-1 focus:ring-gold-dark outline-none transition-all text-sm bg-white/80">
+                        </div>
+                    </div>
+
+                    <!-- Keluhan -->
+                    <div>
+                        <label class="block text-xs font-semibold uppercase tracking-wider text-charcoal mb-2">Keluhan / Catatan Khusus</label>
+                        <textarea rows="3" placeholder="Ceritakan singkat kondisi kulit atau treatment yang diinginkan..." class="w-full px-4 py-3 rounded-xl border border-light-gray focus:border-gold-dark focus:ring-1 focus:ring-gold-dark outline-none transition-all text-sm bg-white/80"></textarea>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" class="w-full gold-gradient-bg text-white py-4 rounded-xl text-xs font-bold uppercase tracking-widest shadow-soft-luxury hover:shadow-glow hover:-translate-y-0.5 transition-all">
+                        Daftar Sekarang
+                    </button>
+                </form>
+
+                <!-- Success Confirmation Message Container -->
+                <div id="formSuccessMessage" class="hidden mt-6 p-6 rounded-2xl bg-white border border-champagne-gold text-center">
+                    <span class="text-4xl block mb-2">🎉</span>
+                    <h4 class="font-serif font-bold text-2xl text-charcoal">Pendaftaran Berhasil!</h4>
+                    <p class="text-sm text-muted-text mt-2">Terima kasih. Tim Linet Beauty akan segera menghubungi Anda melalui WhatsApp/Email.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 10. FLOATING WHATSAPP BUTTON -->
+    <div class="fixed bottom-6 right-6 z-50 flex items-center space-x-3">
+        <!-- Floating Label Badge -->
+        <a href="https://wa.me/6281234567890?text=Halo%20Linet%20Beauty,%20saya%20ingin%20konsultasi" target="_blank" rel="noopener noreferrer" class="hidden sm:flex glass-card px-4 py-2 rounded-full border border-champagne-gold shadow-lg hover:scale-105 transition-transform items-center space-x-2 text-xs font-semibold text-charcoal">
+            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+            <span>Chat Beauty Consultant</span>
+        </a>
+        
+        <!-- WhatsApp Icon Button -->
+        <a href="https://wa.me/6281234567890?text=Halo%20Linet%20Beauty,%20saya%20ingin%20konsultasi" target="_blank" rel="noopener noreferrer" aria-label="Chat WhatsApp" class="w-14 h-14 rounded-full bg-emerald-500 text-white flex items-center justify-center shadow-2xl hover:bg-emerald-600 hover:scale-110 transition-all pulse-subtle">
+            <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24">
+                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+            </svg>
+        </a>
+    </div>
+
+    <!-- 11. FOOTER SECTION -->
+    <footer class="bg-charcoal text-ivory-white pt-16 pb-8 border-t border-champagne-gold/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 mb-12">
+                <!-- Col 1: Brand Info -->
+                <div class="lg:col-span-2 space-y-4">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-9 h-9 rounded-full gold-gradient-bg flex items-center justify-center text-white font-serif text-lg font-bold">
+                            L
+                        </div>
+                        <span class="font-serif text-2xl font-bold tracking-widest uppercase text-white">LINET BEAUTY</span>
+                    </div>
+                    <p class="text-xs text-gray-400 leading-relaxed max-w-sm">
+                        Perusahaan kecantikan terkemuka dengan konsep One Stop Beauty &amp; Medical Solution. Menghadirkan layanan perawatan kulit tingkat medis dan produk eksklusif berkualitas premium.
+                    </p>
+                    <div class="flex space-x-3 pt-2">
+                        <a href="#" class="w-8 h-8 rounded-full bg-white/10 hover:bg-champagne-gold hover:text-charcoal flex items-center justify-center text-xs transition-colors">IG</a>
+                        <a href="#" class="w-8 h-8 rounded-full bg-white/10 hover:bg-champagne-gold hover:text-charcoal flex items-center justify-center text-xs transition-colors">FB</a>
+                        <a href="#" class="w-8 h-8 rounded-full bg-white/10 hover:bg-champagne-gold hover:text-charcoal flex items-center justify-center text-xs transition-colors">YT</a>
+                        <a href="#" class="w-8 h-8 rounded-full bg-white/10 hover:bg-champagne-gold hover:text-charcoal flex items-center justify-center text-xs transition-colors">TK</a>
+                    </div>
+                </div>
+
+                <!-- Col 2: Quick Links -->
+                <div>
+                    <h4 class="font-serif font-bold text-lg text-champagne-gold mb-4">Navigasi</h4>
+                    <ul class="text-xs text-gray-300 space-y-2.5">
+                        <li><a href="#about" class="hover:text-champagne-gold transition-colors">Tentang Kami</a></li>
+                        <li><a href="#business" class="hover:text-champagne-gold transition-colors">Lini Bisnis</a></li>
+                        <li><a href="#why-us" class="hover:text-champagne-gold transition-colors">Keunggulan</a></li>
+                        <li><a href="#flow" class="hover:text-champagne-gold transition-colors">Alur Pelayanan</a></li>
+                        <li><a href="#gallery" class="hover:text-champagne-gold transition-colors">Galeri Klinik</a></li>
+                        <li><a href="#articles" class="hover:text-champagne-gold transition-colors">Artikel &amp; Edukasi</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Contact Info -->
+                <div>
+                    <h4 class="font-serif font-bold text-lg text-champagne-gold mb-4">Kontak &amp; Lokasi</h4>
+                    <ul class="text-xs text-gray-300 space-y-3">
+                        <li class="flex items-start space-x-2">
+                            <span>📍</span>
+                            <span>Jl. Senopati No. 88, Kebayoran Baru, Jakarta Selatan</span>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                            <span>📞</span>
+                            <span>(021) 555-8989 / +62 812-3456-7890</span>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                            <span>✉️</span>
+                            <span>info@linetbeauty.com</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Google Maps Embed Simulation -->
+                <div>
+                    <h4 class="font-serif font-bold text-lg text-champagne-gold mb-4">Lokasi Klinik</h4>
+                    <div class="rounded-xl overflow-hidden border border-white/10 h-32 bg-gray-800 relative">
+                        <iframe title="Lokasi Linet Beauty" src="https://maps.google.com/maps?q=Senopati%20Jakarta&t=&z=13&ie=UTF8&iwloc=&output=embed" class="w-full h-full border-0 filter grayscale opacity-80 contrast-125" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Copyright -->
+            <div class="border-t border-white/10 pt-6 flex flex-col sm:flex-row justify-between items-center text-[11px] text-gray-400">
+                <p>Copyright © 2026 Linet Beauty. All Rights Reserved.</p>
+                <div class="flex space-x-4 mt-2 sm:mt-0">
+                    <a href="#" class="hover:underline">Privacy Policy</a>
+                    <a href="#" class="hover:underline">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODAL FOR ARTICLE / PRODUCT ORDER / IMAGE PREVIEW -->
+    <div id="generalModal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="glass-card bg-white max-w-lg w-full rounded-3xl p-6 sm:p-8 relative shadow-2xl border border-champagne-gold">
+            <button onclick="closeModal()" class="absolute top-4 right-4 w-8 h-8 rounded-full bg-light-gray flex items-center justify-center text-charcoal hover:bg-gold-dark hover:text-white transition-colors">✕</button>
+            <div id="modalContent"></div>
+        </div>
+    </div>
+
+    <!-- JavaScript Interactions -->
+    <script>
+        // 1. Mobile Navigation Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // 2. Smooth Scroll To Products Section
+        function scrollToProducts() {
+            const productSec = document.getElementById('products-section');
+            if (productSec) {
+                productSec.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        // 3. Product Filter Logic
+        function filterProducts(category) {
+            const items = document.querySelectorAll('.product-item');
+            const btns = document.querySelectorAll('.product-filter-btn');
+
+            btns.forEach(btn => {
+                btn.classList.remove('bg-gold-dark', 'text-white');
+                btn.classList.add('bg-white', 'text-charcoal');
+            });
+            event.target.classList.remove('bg-white', 'text-charcoal');
+            event.target.classList.add('bg-gold-dark', 'text-white');
+
+            items.forEach(item => {
+                if (category === 'all' || item.classList.contains(category)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        // 4. Testimonial Slider System
+        const testimonials = [
+            {
+                name: "Clarissa Devina",
+                role: "Entrepreneur, Jakarta",
+                quote: "Sudah 1 tahun mempercayakan kesehatan kulit muka saya di Linet Beauty. Treatment Pico Laser dan skincare serumnya membuat flek memudar total dan kulit terasa jauh lebih mulus glowing natural.",
+                img: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80"
+            },
+            {
+                name: "Anindya Putri, M.Sc",
+                role: "Professional Executive",
+                quote: "Pelayanan di Linet Beauty sangat eksklusif! Dokternya menjelaskan kondisi kulit secara mendalam tanpa meng-overclaim. Ruang perawatannya sangat bersih, harum, dan bikin rileks.",
+                img: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=300&q=80"
+            },
+            {
+                name: "Drg. Stephanie Rosalind",
+                role: "Healthcare Practitioner",
+                quote: "Sebagai tenaga kesehatan, saya sangat selektif memilih klinik estetika. Linet Beauty terbukti memadukan kebersihan higienis tingkat medis dan hasil peremajaan kulit yang nyata.",
+                img: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=300&q=80"
+            }
+        ];
+
+        let currentTestiIndex = 0;
+
+        function updateTestimonial(index) {
+            const card = document.getElementById('testimonialCard');
+            card.style.opacity = '0';
+            setTimeout(() => {
+                document.getElementById('testiImg').src = testimonials[index].img;
+                document.getElementById('testiQuote').innerText = `"${testimonials[index].quote}"`;
+                document.getElementById('testiName').innerText = testimonials[index].name;
+                document.getElementById('testiRole').innerText = testimonials[index].role;
+                card.style.opacity = '1';
+            }, 300);
+
+            // Update dots
+            renderTestiDots();
+        }
+
+        function renderTestiDots() {
+            const dotsContainer = document.getElementById('testimonialDots');
+            dotsContainer.innerHTML = '';
+            testimonials.forEach((_, i) => {
+                const dot = document.createElement('button');
+                dot.className = `w-2.5 h-2.5 rounded-full transition-all ${i === currentTestiIndex ? 'bg-gold-dark w-6' : 'bg-champagne-gold/50'}`;
+                dot.onclick = () => {
+                    currentTestiIndex = i;
+                    updateTestimonial(currentTestiIndex);
+                };
+                dotsContainer.appendChild(dot);
+            });
+        }
+
+        function nextTestimonial() {
+            currentTestiIndex = (currentTestiIndex + 1) % testimonials.length;
+            updateTestimonial(currentTestiIndex);
+        }
+
+        function prevTestimonial() {
+            currentTestiIndex = (currentTestiIndex - 1 + testimonials.length) % testimonials.length;
+            updateTestimonial(currentTestiIndex);
+        }
+
+        // Auto slide testimonials
+        setInterval(() => {
+            nextTestimonial();
+        }, 6000);
+
+        // Initialize dots
+        renderTestiDots();
+
+        // 5. Gallery Filter Logic
+        function filterGallery(cat) {
+            const items = document.querySelectorAll('.gallery-item');
+            const btns = document.querySelectorAll('.gallery-btn');
+
+            btns.forEach(b => {
+                b.classList.remove('bg-gold-dark', 'text-white');
+                b.classList.add('bg-white');
+            });
+            event.target.classList.remove('bg-white');
+            event.target.classList.add('bg-gold-dark', 'text-white');
+
+            items.forEach(item => {
+                if (cat === 'all' || item.classList.contains(cat)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        // 6. Form Submission Handler
+        function handleConsultationSubmit(e) {
+            e.preventDefault();
+            const form = document.getElementById('consultationForm');
+            const success = document.getElementById('formSuccessMessage');
+            
+            form.classList.add('hidden');
+            success.classList.remove('hidden');
+            
+            setTimeout(() => {
+                // Reset form optionally after 8s
+            }, 8000);
+        }
+
+        // 7. General Modal Functions (Order, Articles, Image Preview)
+        function closeModal() {
+            document.getElementById('generalModal').classList.add('hidden');
+        }
+
+        function openOrderModal(productName, price) {
+            const content = document.getElementById('modalContent');
+            content.innerHTML = `
+                <div class="text-center">
+                    <span class="text-3xl block mb-2">🛍️</span>
+                    <h3 class="font-serif font-bold text-2xl text-charcoal">Pesan Skincare</h3>
+                    <p class="text-xs text-muted-text mt-1">Anda memilih produk: <strong class="text-gold-dark">${productName}</strong> (Rp ${price})</p>
+                    
+                    <div class="mt-6 space-y-4 text-left">
+                        <div>
+                            <label class="text-xs font-semibold uppercase text-charcoal block mb-1">Jumlah</label>
+                            <input type="number" value="1" min="1" class="w-full px-3 py-2 border rounded-xl text-sm">
+                        </div>
+                        <div>
+                            <label class="text-xs font-semibold uppercase text-charcoal block mb-1">Alamat Pengiriman</label>
+                            <textarea placeholder="Masukkan alamat lengkap pengiriman..." class="w-full px-3 py-2 border rounded-xl text-sm" rows="2"></textarea>
+                        </div>
+                        <a href="https://wa.me/6281234567890?text=Halo%20Linet%20Beauty,%20saya%20ingin%20pesan%20${encodeURIComponent(productName)}" target="_blank" class="block text-center gold-gradient-bg text-white py-3 rounded-xl font-bold text-xs uppercase tracking-wider shadow-md">
+                            Lanjutkan ke WhatsApp Order &rarr;
+                        </a>
+                    </div>
+                </div>
+            `;
+            document.getElementById('generalModal').classList.remove('hidden');
+        }
+
+        function readArticle(title, body) {
+            const content = document.getElementById('modalContent');
+            content.innerHTML = `
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-widest text-gold-dark">Linet Beauty Journal</span>
+                    <h3 class="font-serif font-bold text-2xl text-charcoal mt-1 mb-4">${title}</h3>
+                    <div class="text-xs text-muted-text leading-relaxed space-y-3">
+                        <p>${body}</p>
+                        <p>Untuk panduan dan pemeriksaan regimen skincare yang disesuaikan dengan jenis kulit unik Anda, kami menyarankan konsultasi langsung bersama dokter estetik kami di klinik Linet Beauty.</p>
+                    </div>
+                    <button onclick="closeModal()" class="mt-6 w-full gold-gradient-bg text-white py-2.5 rounded-xl text-xs font-bold uppercase">
+                        Tutup Artikel
+                    </button>
+                </div>
+            `;
+            document.getElementById('generalModal').classList.remove('hidden');
+        }
+
+        function openImageModal(element) {
+            const img = element.querySelector('img');
+            const title = element.querySelector('h4') ? element.querySelector('h4').innerText : 'Linet Beauty Facility';
+            const content = document.getElementById('modalContent');
+            content.innerHTML = `
+                <div class="text-center">
+                    <img src="${img.src}" alt="${title}" class="w-full h-64 object-cover rounded-2xl mb-4">
+                    <h4 class="font-serif font-bold text-xl text-charcoal">${title}</h4>
+                    <p class="text-xs text-muted-text mt-1">Fasilitas klinik kecantikan medis internasional Linet Beauty.</p>
+                </div>
+            `;
+            document.getElementById('generalModal').classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
